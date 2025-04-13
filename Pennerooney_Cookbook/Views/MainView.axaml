@@ -23,14 +23,17 @@
                  Margin="25, 0, 0, 0"
                  FontSize="20"
                  >Pennerooney CookBook</Label>
-          <Grid Grid.Column="1" ColumnDefinitions="Auto, *, Auto, *, Auto, *, Auto, *">
-              <Button Grid.Column="0">Home</Button>
-              <Button Grid.Column="2">Home</Button>
-              <Button Grid.Column="4">Home</Button>
-              <Button Grid.Column="6">Home</Button>
-          </Grid>
+          <StackPanel Grid.Column="1" 
+                      Spacing="25" 
+                      Orientation="Horizontal" 
+                      HorizontalAlignment="Right"
+                      Margin="0, 0, 25, 0">
+              <Button Grid.Column="0" Command="{Binding GoToHome}">Home</Button>
+              <Button Grid.Column="2" Command="{Binding GoToNewRecipe}">New Recipe</Button>
+          </StackPanel>
       </Grid>
       
-      <Label Grid.Row="1">The Main Body</Label>
+      <ContentControl Grid.Row="1"
+                      Content="{ Binding CurrentPage}"/>
   </Grid>
 </UserControl>

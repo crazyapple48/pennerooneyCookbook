@@ -1,9 +1,12 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
+using Microsoft.Extensions.DependencyInjection;
+using Pennerooney_Cookbook.Factories;
 using Pennerooney_Cookbook.ViewModels;
 using Pennerooney_Cookbook.Views;
 
@@ -11,6 +14,23 @@ namespace Pennerooney_Cookbook;
 
 public partial class App : Application
 {
+
+    private static void ConfigureServices(IServiceCollection services)
+    {
+        services.AddSingleton<MainViewModel>();
+
+        services.AddTransient<HomePageViewModel>();
+        services.AddTransient<NewRecipePageViewModel>();
+
+        services.AddSingleton<PageFactory>();
+
+        services.AddSingleton<Func<Type, PageViewModel>>(x => type => type switch
+        {
+            _ when type == typeof(HomePageViewModel) => x.GetRequiredService<HomePageViewModel>(),
+            _ when type == typeof(NewRecipePageViewModel) => x.GetRequiredService<NewRecipePageViewModel>(),
+            _ => throw new InvalidOperationException()
+        });
+    }
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -18,6 +38,13 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        var serviceCollection = new ServiceCollection();
+        ConfigureServices(serviceCollection);
+        
+        var services = serviceCollection.BuildServiceProvider();
+        
+        var vm = services.GetRequiredService<MainViewModel>();
+        
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
@@ -25,14 +52,14 @@ public partial class App : Application
             DisableAvaloniaDataAnnotationValidation();
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel()
+                DataContext = vm
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
-                DataContext = new MainViewModel()
+                DataContext = vm
             };
         }
 
