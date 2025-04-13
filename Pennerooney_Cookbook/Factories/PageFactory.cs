@@ -5,7 +5,7 @@ namespace Pennerooney_Cookbook.Factories;
 
 public class PageFactory(Func<Type, PageViewModel> factory)
 {
-    public PageViewModel GetPageViewModel<T>(Action<T>? afterCreation = null)
+    public PageViewModel GetPageViewModel<T>(Action<T> afterCreation = null)
         where T: PageViewModel
     {
         var viewModel = factory(typeof(T));

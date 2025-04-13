@@ -8,15 +8,41 @@
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>
-
-    <Application.Resources>
-        <LinearGradientBrush x:Key="SecondaryBackgroundGradient" StartPoint="0%,0%" EndPoint="0%, 100%">
-            <GradientStop Color=" #105332" Offset="0.0"></GradientStop>
-            <GradientStop Color=" #032209" Offset="1.0"></GradientStop>
-        </LinearGradientBrush>
-    </Application.Resources>
              
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="Styles/Label.axaml" />
     </Application.Styles>
+             
+
+    <Application.Resources>
+        
+        <FontFamily x:Key="PrimaryFontFamily">/Assets/Fonts/Kugile_Demo.ttf#Kugile, Regular</FontFamily>
+        
+        <Color x:Key="LightTan">#FFF0BC</Color>
+        <Color x:Key="DarkerTan">#AAA078</Color>
+        <Color x:Key="LightGreen">#105332</Color>
+        <Color x:Key="DarkGreen">#032209</Color>
+        <Color x:Key="DarkOrange">#643303</Color>
+        
+        <BoxShadows x:Key="NavBarShadow">0 2 10 2 #643303</BoxShadows>
+        
+        <LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%, 100%">
+            <GradientStop Color="{DynamicResource LightTan}" Offset="0.0"></GradientStop>
+            <GradientStop Color="{DynamicResource DarkerTan}" Offset="1.0"></GradientStop>
+        </LinearGradientBrush>
+        
+        <LinearGradientBrush x:Key="SecondaryBackgroundGradient" StartPoint="0%,0%" EndPoint="0%, 100%">
+            <GradientStop Color="{DynamicResource LightGreen}" Offset="0.0"></GradientStop>
+            <GradientStop Color="{DynamicResource DarkGreen}" Offset="1.0"></GradientStop>
+        </LinearGradientBrush>
+        
+        <ConicGradientBrush x:Key="PrimaryCardGradient" Angle="180">
+            <GradientStop Color="{DynamicResource LightGreen}" Offset="0.0"></GradientStop>
+            <GradientStop Color="{DynamicResource DarkGreen}" Offset="1.0"></GradientStop>
+        </ConicGradientBrush>
+        
+        
+        
+    </Application.Resources>
 </Application>

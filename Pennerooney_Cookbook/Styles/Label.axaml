@@ -1,0 +1,16 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20" Background="{DynamicResource SecondaryBackgroundGradient}">
+            <!-- Add Controls for Previewer Here -->
+            <Label Content="Basic Label" />
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    
+    <Style Selector="Label">
+        <Setter Property="Foreground" Value="{DynamicResource DarkerTan}"></Setter>
+        <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}"></Setter>
+    </Style>
+</Styles>
