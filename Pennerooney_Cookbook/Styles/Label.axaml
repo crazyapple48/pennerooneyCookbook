@@ -3,7 +3,10 @@
     <Design.PreviewWith>
         <Border Padding="20" Background="{DynamicResource SecondaryBackgroundGradient}">
             <!-- Add Controls for Previewer Here -->
-            <Label Content="Basic Label" />
+            <StackPanel>
+                <Label Content="Basic Label" />
+                <Label Classes="Icon" Content="&#xebae;" />
+            </StackPanel>
         </Border>
     </Design.PreviewWith>
 
@@ -12,5 +15,9 @@
     <Style Selector="Label">
         <Setter Property="Foreground" Value="{DynamicResource DarkerTan}"></Setter>
         <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}"></Setter>
+    </Style>
+    
+    <Style Selector="Label.Icon">
+        <Setter Property="FontFamily" Value="{DynamicResource PhosphorFill}"></Setter>
     </Style>
 </Styles>

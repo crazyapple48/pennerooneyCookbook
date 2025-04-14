@@ -17,7 +17,15 @@
 
     <Application.Resources>
         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <MergeResourceInclude Source="/Controls/IconButton.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
         <FontFamily x:Key="PrimaryFontFamily">/Assets/Fonts/Kugile_Demo.ttf#Kugile, Regular</FontFamily>
+        <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor, Regular</FontFamily>
+        <FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill, Regular</FontFamily>
         
         <Color x:Key="LightTan">#FFF0BC</Color>
         <Color x:Key="DarkerTan">#AAA078</Color>

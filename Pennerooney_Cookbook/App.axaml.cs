@@ -5,10 +5,13 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
+using Avalonia.Metadata;
 using Microsoft.Extensions.DependencyInjection;
 using Pennerooney_Cookbook.Factories;
 using Pennerooney_Cookbook.ViewModels;
 using Pennerooney_Cookbook.Views;
+
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Pennerooney_Cookbook.Controls")]
 
 namespace Pennerooney_Cookbook;
 
