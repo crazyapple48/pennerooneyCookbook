@@ -27,7 +27,7 @@
                   
               <Label Grid.Column="0" 
                      VerticalAlignment="Center"
-                     Margin="25, 0, 0, 0"
+                     Margin="25, 6, 0, 0"
                      FontSize="20"
                      FontWeight="Bold"
               >Pennerooney CookBook</Label>
@@ -36,8 +36,8 @@
                           Orientation="Horizontal" 
                           HorizontalAlignment="Right"
                           Margin="0, 0, 25, 0">
-                  <Button Grid.Column="0" Command="{Binding GoToHome}">Home</Button>
-                  <Button Grid.Column="2" Command="{Binding GoToNewRecipe}">New Recipe</Button>
+                  <IconButton Classes="NavBar" Command="{Binding GoToHome}" Content="Home"/>
+                  <IconButton Classes="NavBar" Command="{Binding GoToNewRecipe}" Content="New Recipe" />
               </StackPanel>
           </Grid>
       </Border>

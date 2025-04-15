@@ -5,7 +5,7 @@
       <map>
         <entry key="Pennerooney_Cookbook/App.axaml" value="Pennerooney_Cookbook.Browser/Pennerooney_Cookbook.Browser.csproj" />
         <entry key="Pennerooney_Cookbook/Controls/IconButton.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
-        <entry key="Pennerooney_Cookbook/Styles/Buttons.axaml" value="Pennerooney_Cookbook.Browser/Pennerooney_Cookbook.Browser.csproj" />
+        <entry key="Pennerooney_Cookbook/Styles/Buttons.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Styles/Label.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Views/HomePageView.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Views/MainView.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />

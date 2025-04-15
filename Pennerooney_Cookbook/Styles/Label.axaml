@@ -13,11 +13,12 @@
     <!-- Add Styles Here -->
     
     <Style Selector="Label">
-        <Setter Property="Foreground" Value="{DynamicResource DarkerTan}"></Setter>
-        <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource DarkerTan}" />
+        <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}" />
+        <Setter Property="Margin" Value="0 6 0 0" />
     </Style>
     
     <Style Selector="Label.Icon">
-        <Setter Property="FontFamily" Value="{DynamicResource PhosphorFill}"></Setter>
+        <Setter Property="FontFamily" Value="{DynamicResource PhosphorFill}" />
     </Style>
 </Styles>

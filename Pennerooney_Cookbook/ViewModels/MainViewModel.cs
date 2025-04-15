@@ -13,7 +13,7 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HomePageIsActive))]
     [NotifyPropertyChangedFor(nameof(NewRecipePageIsActive))]
-    private PageViewModel? _currentPage;
+    private PageViewModel _currentPage;
     
     public bool HomePageIsActive => CurrentPage.PageName == PageNames.Home;
     public bool NewRecipePageIsActive => CurrentPage.PageName == PageNames.NewRecipe;
@@ -26,7 +26,7 @@ public partial class MainViewModel : ViewModelBase
     public MainViewModel(PageFactory pageFactory)
     {
         _pageFactory = pageFactory ?? throw new ArgumentNullException(nameof(pageFactory));
-        GoToHome();
+        CurrentPage = _pageFactory.GetPageViewModel<HomePageViewModel>();
     }
 
     public void GoToHome() => CurrentPage = _pageFactory.GetPageViewModel<HomePageViewModel>();

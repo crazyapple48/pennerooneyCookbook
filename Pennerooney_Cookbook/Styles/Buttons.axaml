@@ -3,8 +3,43 @@
     <Design.PreviewWith>
         <Border Padding="20" Background="{DynamicResource SecondaryBackgroundGradient}">
             <!-- Add Controls for Previewer Here -->
+            <StackPanel Spacing="15">
+                <IconButton Classes="NavBar" Content="NavBar" />
+                <IconButton Classes="NavBar Active" Content="Active NavBar" />
+            </StackPanel>
         </Border>
     </Design.PreviewWith>
 
     <!-- Add Styles Here -->
+    
+    <Style Selector="IconButton.NavBar">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource DarkerTan}" />
+        <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}" />
+    </Style>
+    
+    <Style Selector="IconButton.NavBar /template/ ContentPresenter">
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Foreground" Duration="0:0:0.3" />
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.3" />
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="IconButton.NavBar:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource LightTan}" />
+        <Setter Property="RenderTransform" Value="scale(1.2)" />
+    </Style>
+    
+    <Style Selector="IconButton.NavBar.Active">
+        <Setter Property="IconText" Value="&#xebae;"></Setter>
+    </Style>
+    
+    <Style Selector="IconButton.NavBar.Active /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="RenderTransform" Value="scale(1.2)"></Setter>
+    </Style>
+    
 </Styles>

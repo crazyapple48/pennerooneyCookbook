@@ -4,7 +4,7 @@
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
-        <IconButton IconText="&#xebae;" Content="Click Me!" />
+        <IconButton IconText="&#xebae;" Content="Click Me!" Height="50"/>
         <IconButton IconText="&#xebae;" Classes="accent" Content="Click Me!" />
         <Button Content="Click Me!" />
         <Button Classes="accent" Content="Click Me!" />
@@ -35,8 +35,8 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
                           CornerRadius="{TemplateBinding CornerRadius}"
-                          Content="{TemplateBinding Content}"
                           Padding="{TemplateBinding Padding}"
+                          Content="{TemplateBinding Content}"
                           RecognizesAccessKey="True"
                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
@@ -44,8 +44,8 @@
               <ContentPresenter.ContentTemplate>
                 <DataTemplate DataType="x:Object">
                   <StackPanel Orientation="Horizontal">
-                    <Label Classes="Icon" Content="{Binding $parent[IconButton].IconText}" />
-                    <ContentPresenter Content="{Binding }"/>
+                    <Label Classes="Icon" Content="{Binding $parent[IconButton].IconText}" Margin="0 " VerticalAlignment="Center"/>
+                    <Label Content="{Binding $parent[IconButton].Content}" VerticalAlignment="Center"></Label>
                   </StackPanel>
                 </DataTemplate>
               </ContentPresenter.ContentTemplate>
