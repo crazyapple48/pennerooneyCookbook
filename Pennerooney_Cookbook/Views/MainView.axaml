@@ -39,8 +39,8 @@
                               Orientation="Horizontal" 
                               HorizontalAlignment="Right"
                               Margin="0, 0, 25, 0">
-                      <IconButton Classes="NavBar" Command="{Binding GoToHome}" Content="Home"/>
-                      <IconButton Classes="NavBar" Command="{Binding GoToNewRecipe}" Content="New Recipe" />
+                      <IconButton Classes="NavBar" Classes.Active="{Binding HomePageIsActive}" Command="{Binding GoToHomeCommand}" Content="Home"/>
+                      <IconButton Classes="NavBar" Classes.Active="{Binding NewRecipePageIsActive}" Command="{Binding GoToNewRecipeCommand}" Content="New Recipe" />
                   </StackPanel>
               </Grid>
           </Border>

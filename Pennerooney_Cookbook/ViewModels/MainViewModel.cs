@@ -1,5 +1,6 @@
 ﻿using System;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Pennerooney_Cookbook.Data;
 using Pennerooney_Cookbook.Factories;
 
@@ -29,7 +30,9 @@ public partial class MainViewModel : ViewModelBase
         CurrentPage = _pageFactory.GetPageViewModel<HomePageViewModel>();
     }
 
-    public void GoToHome() => CurrentPage = _pageFactory.GetPageViewModel<HomePageViewModel>();
+    [RelayCommand]
+    private void GoToHome() => CurrentPage = _pageFactory.GetPageViewModel<HomePageViewModel>();
     
-    public void GoToNewRecipe() => CurrentPage = _pageFactory.GetPageViewModel<NewRecipePageViewModel>();
+    [RelayCommand]
+    private void GoToNewRecipe() => CurrentPage = _pageFactory.GetPageViewModel<NewRecipePageViewModel>();
 }
