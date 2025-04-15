@@ -14,7 +14,7 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(HomePageIsActive))]
     [NotifyPropertyChangedFor(nameof(NewRecipePageIsActive))]
     private PageViewModel _currentPage;
-    
+
     public bool HomePageIsActive => CurrentPage.PageName == PageNames.Home;
     public bool NewRecipePageIsActive => CurrentPage.PageName == PageNames.NewRecipe;
 

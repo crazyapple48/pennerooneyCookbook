@@ -9,7 +9,8 @@
         MinWidth="1080"
         x:Class="Pennerooney_Cookbook.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Pennerooney_Cookbook">
+        Title="Pennerooney_Cookbook"
+        WindowStartupLocation="CenterScreen">
         
         <Design.DataContext><vm:MainViewModel></vm:MainViewModel></Design.DataContext>
         

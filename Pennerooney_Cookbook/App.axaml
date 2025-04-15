@@ -28,6 +28,7 @@
         <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor, Regular</FontFamily>
         <FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill, Regular</FontFamily>
         
+        
         <Color x:Key="LightTan">#FFF0BC</Color>
         <Color x:Key="DarkerTan">#AAA078</Color>
         <Color x:Key="LightGreen">#105332</Color>
