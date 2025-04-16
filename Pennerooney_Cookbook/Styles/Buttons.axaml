@@ -1,7 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
-        <Border Padding="20" Background="{DynamicResource SecondaryBackgroundGradient}">
+        <Border Padding="10" Width="200" Background="{DynamicResource SecondaryBackgroundGradient}">
             <!-- Add Controls for Previewer Here -->
             <StackPanel Spacing="15">
                 <IconButton Classes="NavBar" Content="NavBar" />
@@ -19,6 +19,7 @@
     </Style>
     
     <Style Selector="IconButton.NavBar /template/ ContentPresenter">
+        <Setter Property="Padding" Value="0 6 0 0 "></Setter>
         <Setter Property="Transitions">
             <Transitions>
                 <BrushTransition Property="Foreground" Duration="0:0:0.3" />
@@ -40,6 +41,10 @@
     <Style Selector="IconButton.NavBar.Active /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="RenderTransform" Value="scale(1.2)"></Setter>
+    </Style>
+    
+    <Style Selector="IconButton.NavBar.Active Label">
+        <Setter Property="Margin" Value=" 0 0 0 6" />
     </Style>
     
 </Styles>
