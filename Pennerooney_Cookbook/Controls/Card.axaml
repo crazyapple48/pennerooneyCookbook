@@ -1,5 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:m="clr-namespace:Pennerooney_Cookbook.Models"
+        x:DataType="m:Recipe"
         >
     <Design.PreviewWith>
         <Card />
@@ -15,10 +17,10 @@
                         "
                         CornerRadius="20"
                         Padding="15 0"
-                        >
+                >
                     <Grid RowDefinitions="*, *, *, *">
                         <Label Grid.Row="0" 
-                               Content="Recipe1"
+                               Content="{Binding Title}"
                                HorizontalAlignment="Center"
                                FontSize="18"
                                />
@@ -26,30 +28,30 @@
                         <Grid Grid.Row="1" 
                               ColumnDefinitions="*, *, *">
                             <Label Grid.Column="0" 
-                                   Content="Method" 
+                                   Content="{Binding Method.Title}" 
                                    HorizontalAlignment="Center" />
                             <Label Grid.Column="1" 
-                                   Content="Genre" 
+                                   Content="{Binding Genre.Title}" 
                                    HorizontalAlignment="Center" />
                             <Label Grid.Column="2" 
-                                   Content="Purpose" 
+                                   Content="{Binding Purpose.Title}" 
                                    HorizontalAlignment="Center"/>
                         </Grid>
                         
                         <Grid Grid.Row="2" ColumnDefinitions="*, *">
                             <StackPanel Grid.Column="0" VerticalAlignment="Bottom">
                                 <Label HorizontalAlignment="Center" Content="Rating" Margin="0"/> 
-                                <Label HorizontalAlignment="Center" Content="Stars" Margin="0"/>
+                                <Label HorizontalAlignment="Center" Content="{Binding Rating}" Margin="0"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
                                 <Label HorizontalAlignment="Center" Content="Difficulty" Margin="0"/> 
-                                <Label HorizontalAlignment="Center" Content="Stars" Margin="0"/>
+                                <Label HorizontalAlignment="Center" Content="{Binding Difficulty}" Margin="0"/>
                             </StackPanel> 
                         </Grid>
                         
                         <Grid Grid.Row="3" ColumnDefinitions="*, Auto">
-                            <Label Grid.Column="0" Content="Last Cooked Date" VerticalAlignment="Bottom"/>
-                            <Label Grid.Column="1" Content="Fav" VerticalAlignment="Bottom"/>
+                            <Label Grid.Column="0" Content="{Binding LastCooked}" VerticalAlignment="Bottom"/>
+                            <Label Grid.Column="1" Content="{Binding IsFavorite}" VerticalAlignment="Bottom"/>
                         </Grid>
                         
                     </Grid>
