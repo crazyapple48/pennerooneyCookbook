@@ -34,6 +34,7 @@
                           Background="{TemplateBinding Background}"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
+                          Foreground="{TemplateBinding Foreground}"
                           CornerRadius="{TemplateBinding CornerRadius}"
                           Padding="{TemplateBinding Padding}"
                           Content="{TemplateBinding Content}"
@@ -45,7 +46,7 @@
                 <DataTemplate DataType="x:Object">
                   <StackPanel Orientation="Horizontal">
                     <Label Classes="Icon" Content="{Binding $parent[IconButton].IconText}" Margin="0 " VerticalAlignment="Center"/>
-                    <Label Content="{Binding $parent[IconButton].Content}" VerticalAlignment="Center"></Label>
+                    <ContentPresenter Content="{Binding}" VerticalAlignment="Center"></ContentPresenter>
                   </StackPanel>
                 </DataTemplate>
               </ContentPresenter.ContentTemplate>
