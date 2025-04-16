@@ -12,7 +12,8 @@
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="/Styles/Label.axaml" />
-        <StyleInclude Source="/Styles/Buttons.axaml"></StyleInclude>
+        <StyleInclude Source="/Styles/Buttons.axaml" />
+        <StyleInclude Source="/Controls/Card.axaml"></StyleInclude>
     </Application.Styles>
              
 
