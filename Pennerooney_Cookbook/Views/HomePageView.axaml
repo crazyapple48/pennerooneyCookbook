@@ -5,13 +5,22 @@
              xmlns:vm="clr-namespace:Pennerooney_Cookbook.ViewModels"
              xmlns:m="clr-namespace:Pennerooney_Cookbook.Models"
              x:DataType="vm:HomePageViewModel"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Pennerooney_Cookbook.Views.HomePageView">
+             mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
+             x:Class="Pennerooney_Cookbook.Views.HomePageView"
+             Background="{DynamicResource PrimaryBackgroundGradient}"
+             >
+    
+    <Design.DataContext><vm:HomePageViewModel></vm:HomePageViewModel></Design.DataContext>
     
     <ItemsControl ItemsSource="{Binding Recipes}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel  HorizontalAlignment="Center"></WrapPanel>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
         <ItemsControl.ItemTemplate>
             <DataTemplate DataType="m:Recipe">
-                <Card />
+               <Card Grid.Column="{Binding Id}" Margin="15"/>
             </DataTemplate>
         </ItemsControl.ItemTemplate>
     </ItemsControl>
