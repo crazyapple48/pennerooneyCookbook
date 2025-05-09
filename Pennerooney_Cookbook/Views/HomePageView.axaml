@@ -13,11 +13,13 @@
     <Design.DataContext><vm:HomePageViewModel></vm:HomePageViewModel></Design.DataContext>
     
     <ItemsControl ItemsSource="{Binding Recipes}">
+        <!-- Controls the container of ItemsControl -->
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
                 <WrapPanel  HorizontalAlignment="Center"></WrapPanel>
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
+        <!-- The Data template of ItemsControl -->
         <ItemsControl.ItemTemplate>
             <DataTemplate DataType="m:Recipe">
                <Card Grid.Column="{Binding Id}" Margin="15"/>

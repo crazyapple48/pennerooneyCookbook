@@ -18,9 +18,11 @@
         
         <Image  Source="/Assets/Images/Mushrooms-color.png" Stretch="UniformToFill" Opacity=".2"/>
         <Grid RowDefinitions="Auto, *">
-          <Border Grid.Column="0"
-                  BoxShadow="{DynamicResource NavBarShadow}"
-                  Margin="0 0 0 15">
+            
+            <!-- NavBar -->
+            <Border Grid.Column="0"
+                    BoxShadow="{DynamicResource NavBarShadow}"
+                    Margin="0 0 0 15">
               <Grid Grid.Row="0" 
                     ColumnDefinitions="*, 1.2*"  
                     Background="{DynamicResource SecondaryBackgroundGradient}" 
@@ -44,7 +46,9 @@
                   </StackPanel>
               </Grid>
           </Border>
-          
+            
+            
+          <!-- Main Content Area  -->
           <ContentControl Grid.Row="1"
                           Content="{ Binding CurrentPage}"/>
       </Grid>
