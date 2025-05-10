@@ -5,6 +5,7 @@
             <!-- Add Controls for Previewer Here -->
             <StackPanel>
                 <Label Content="Basic Label" />
+                <Label Classes="Header" Content="Header" />
                 <Label Classes="Icon" Content="&#xebae;" />
             </StackPanel>
         </Border>
@@ -16,6 +17,10 @@
         <Setter Property="Foreground" Value="{DynamicResource DarkerTan}" />
         <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}" />
         <Setter Property="Margin" Value="0 6 0 0" />
+    </Style>
+    
+    <Style Selector="Label.Header">
+        <Setter Property="FontSize" Value="30"></Setter>
     </Style>
     
     <Style Selector="Label.Icon">

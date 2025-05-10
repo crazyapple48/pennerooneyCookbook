@@ -6,12 +6,14 @@
         <entry key="Pennerooney_Cookbook/App.axaml" value="Pennerooney_Cookbook.Browser/Pennerooney_Cookbook.Browser.csproj" />
         <entry key="Pennerooney_Cookbook/Controls/Card.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Controls/IconButton.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
+        <entry key="Pennerooney_Cookbook/Controls/TextBox.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Styles/Buttons.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Styles/Label.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
+        <entry key="Pennerooney_Cookbook/Styles/TextBox.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Views/HomePageView.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Views/MainView.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
         <entry key="Pennerooney_Cookbook/Views/MainWindow.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
-        <entry key="Pennerooney_Cookbook/Views/NewRecipePageView.axaml" value="Pennerooney_Cookbook.Browser/Pennerooney_Cookbook.Browser.csproj" />
+        <entry key="Pennerooney_Cookbook/Views/NewRecipePageView.axaml" value="Pennerooney_Cookbook.Desktop/Pennerooney_Cookbook.Desktop.csproj" />
       </map>
     </option>
   </component>

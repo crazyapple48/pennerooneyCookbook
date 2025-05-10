@@ -2,7 +2,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pennerooney_Cookbook.ViewModels"
+             x:DataType="vm:NewRecipePageViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Pennerooney_Cookbook.Views.NewRecipePageView">
-    New Recipe!!!
+             x:Class="Pennerooney_Cookbook.Views.NewRecipePageView"
+             Background="{DynamicResource PrimaryBackgroundGradient}">
+    
+    <Design.DataContext><vm:NewRecipePageViewModel></vm:NewRecipePageViewModel></Design.DataContext>
+    
+    <Grid ColumnDefinitions="*, 10, *, 10, *" 
+          RowDefinitions="Auto, 10, Auto, 10, Auto, 10, Auto"
+          Background="{DynamicResource PrimaryCardGradient}"
+          Margin="15"
+          >
+        
+        <!-- Header -->
+        <Label Grid.Column="0"
+               Grid.ColumnSpan="5"
+               Classes="Header" 
+               Content="New Recipe" 
+               HorizontalAlignment="Center"
+        />
+        
+        <!-- Title -->
+        <StackPanel Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="5" 
+                    >
+            <TextBox Width="200"
+                     
+                     >
+            
+            </TextBox>
+            
+        </StackPanel>
+        
+    </Grid>
+    
 </UserControl>
