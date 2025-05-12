@@ -11,7 +11,7 @@
     <Design.DataContext><vm:NewRecipePageViewModel></vm:NewRecipePageViewModel></Design.DataContext>
     
     <Grid ColumnDefinitions="*, 10, *, 10, *" 
-          RowDefinitions="Auto, 10, Auto, 10, Auto, 10, Auto"
+          RowDefinitions="Auto, 10, Auto, 10, *, 10, Auto"
           Background="{DynamicResource PrimaryCardGradient}"
           Margin="15"
           >
@@ -25,18 +25,57 @@
         />
         
         <!-- Title -->
-        <StackPanel Grid.Column="0"
-                    Grid.Row="2"
-                    Grid.ColumnSpan="5" 
-                    >
-            <TextBox Width="200"
-                     
-                     >
-            
-            </TextBox>
-            
-        </StackPanel>
+        <TextBox  Grid.Column="0"
+                  Grid.Row="2"
+                  Grid.ColumnSpan="5"
+                  Width="200"
+                  Watermark="Enter recipe title..."
+        >
+        </TextBox>
         
+        <!-- Method -->
+        <ComboBox Grid.Row="4"
+                  Grid.Column="0"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Methods}"
+                  PlaceholderText="Select a Method"
+                  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+            
+        <!-- Genre -->
+        <ComboBox Grid.Row="4"
+                  Grid.Column="2"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Genres}"
+                  PlaceholderText="Select a Genre"
+        >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <!-- Purpose -->
+        <ComboBox Grid.Row="4"
+                  Grid.Column="4"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Purposes}"
+                  PlaceholderText="Select a Purpose"
+        >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
     
 </UserControl>

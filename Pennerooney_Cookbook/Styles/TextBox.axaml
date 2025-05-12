@@ -22,19 +22,19 @@
         <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundGradient}" />
         <Setter Property="Foreground" Value="{DynamicResource DarkGreen}" />
         <Setter Property="CornerRadius" Value="12" />
-        <Setter Property="CaretBrush" Value="{DynamicResource DarkGreen}"></Setter>
+        <Setter Property="CaretBrush" Value="{DynamicResource DarkGreen}" />
     </Style>
     
     <Style Selector="TextBox:pointerover /template/ Border" >
-        <Setter Property="Background" Value="{DynamicResource DarkerTan}"></Setter>
-        <Setter Property="CornerRadius" Value="12"></Setter>
+        <Setter Property="Background" Value="{DynamicResource DarkerTan}" />
+        <Setter Property="CornerRadius" Value="12" />
     </Style>
     
     <Style Selector="TextBox:focus">
-        <Setter Property="Foreground" Value="{DynamicResource DarkGreen}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource DarkGreen}" />
         <Style Selector="^ /template/ Border">
-            <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundGradient}"></Setter>
-            <Setter Property="CornerRadius" Value="12"></Setter>
+            <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundGradient}" />
+            <Setter Property="CornerRadius" Value="12" />
         </Style>
     </Style>
 </Styles>

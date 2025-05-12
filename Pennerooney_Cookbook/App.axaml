@@ -25,6 +25,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <MergeResourceInclude Source="/Controls/IconButton.axaml" />
                 <MergeResourceInclude Source="/Controls/ComboBox.axaml" />
+                <MergeResourceInclude Source="/Controls/ComboBoxItem.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         
