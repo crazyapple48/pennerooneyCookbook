@@ -1,0 +1,51 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    <Design.PreviewWith>
+        <Border Padding="20" Background="{DynamicResource PrimaryCardGradient}">
+            <!-- Add Controls for Previewer Here -->
+            <ComboBox PlaceholderText="Error">
+                <DataValidationErrors.Error>
+                    <system:Exception>
+                        <x:Arguments>
+                            <x:String>Error</x:String>
+                        </x:Arguments>
+                    </system:Exception>
+                </DataValidationErrors.Error>
+            </ComboBox>
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    
+    <Style Selector="DataValidationErrors">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DockPanel LastChildFill="True">
+                    <ContentControl DockPanel.Dock="Bottom"
+                                    ContentTemplate="{TemplateBinding ErrorTemplate}"
+                                    DataContext="{TemplateBinding Owner}"
+                                    Content="{Binding (DataValidationErrors.Errors)}"
+                                    IsVisible="{Binding (DataValidationErrors.HasErrors)}"
+                                    />
+                    <ContentPresenter Name="PART_ContentPresenter"
+                                      Background="{TemplateBinding Background}"
+                                      BorderBrush="{TemplateBinding BorderBrush}"
+                                      BorderThickness="{TemplateBinding BorderThickness}"
+                                      CornerRadius="{TemplateBinding CornerRadius}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      Content="{TemplateBinding Content}"
+                                      Padding="{TemplateBinding Padding}"/>
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+        
+        <Setter Property="ErrorTemplate">
+            <DataTemplate x:DataType="{x:Type x:Object}">
+                <ItemsControl ItemsSource="{Binding}" 
+                              Foreground="{DynamicResource ErrorColor}"
+                              />
+            </DataTemplate>
+        </Setter>
+    </Style>
+</Styles>
