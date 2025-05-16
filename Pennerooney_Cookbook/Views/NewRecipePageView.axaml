@@ -11,7 +11,7 @@
     <Design.DataContext><vm:NewRecipePageViewModel></vm:NewRecipePageViewModel></Design.DataContext>
     
     <Grid ColumnDefinitions="*, 10, *, 10, *" 
-          RowDefinitions="Auto, 10, Auto, 10, *, 10, Auto"
+          RowDefinitions="Auto, 10, Auto, 10, Auto, 10, Auto"
           Background="{DynamicResource PrimaryCardGradient}"
           Margin="15"
           >
@@ -76,6 +76,54 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        
+        <!-- Rating  -->
+        <Border Grid.Row="6" 
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Background="{DynamicResource PrimaryBackgroundGradient}"
+                Width="150"
+                CornerRadius="12"
+                >
+            <StackPanel HorizontalAlignment="Center">
+                <Label Content="Rating:" 
+                       Foreground="{DynamicResource DarkGreen}"
+                       HorizontalContentAlignment="Center"/>
+                
+                <Slider IsSnapToTickEnabled="True"
+                        Ticks="1, 2, 3, 4, 5"
+                        Minimum="1"
+                        Maximum="5"
+                        Width="100"
+                        TickPlacement="TopLeft"
+                        />
+            </StackPanel>
+        </Border>
+        
+        <!-- Difficulty -->
+        
+        <Border Grid.Row="6" 
+                Grid.Column="2"
+                Grid.ColumnSpan="3"
+                Background="{DynamicResource PrimaryBackgroundGradient}"
+                Width="150"
+                CornerRadius="12"
+        >
+            <StackPanel HorizontalAlignment="Center">
+                <Label Content="Difficulty:" 
+                       Foreground="{DynamicResource DarkGreen}"
+                       HorizontalContentAlignment="Center"/>
+                
+                <Slider IsSnapToTickEnabled="True"
+                        Ticks="1, 2, 3, 4, 5"
+                        Minimum="1"
+                        Maximum="5"
+                        Width="100"
+                        TickPlacement="TopLeft"
+                        />
+            </StackPanel>
+        </Border>
+        
     </Grid>
     
 </UserControl>
