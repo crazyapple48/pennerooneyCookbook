@@ -15,7 +15,7 @@
   </Design.DataContext>
     
     <Grid>
-        
+ 
         <Image  Source="/Assets/Images/Mushrooms-color.png" Stretch="UniformToFill" Opacity=".2"/>
         <Grid RowDefinitions="Auto, *">
             

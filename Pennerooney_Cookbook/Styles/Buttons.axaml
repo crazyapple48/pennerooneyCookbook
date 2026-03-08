@@ -16,10 +16,11 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource DarkerTan}" />
         <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}" />
+        <Setter Property="ClipToBounds" Value="False" />
     </Style>
     
     <Style Selector="IconButton.NavBar /template/ ContentPresenter">
-        <Setter Property="Padding" Value="0 6 0 0 "></Setter>
+        <Setter Property="Padding" Value="0 6 0 0 " />
         <Setter Property="Transitions">
             <Transitions>
                 <BrushTransition Property="Foreground" Duration="0:0:0.3" />

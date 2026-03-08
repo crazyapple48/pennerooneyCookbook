@@ -1,28 +1,31 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl x:Class="Pennerooney_Cookbook.Views.HomePageView"
+             xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:m="clr-namespace:Pennerooney_Cookbook.Models"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Pennerooney_Cookbook.ViewModels"
-             xmlns:m="clr-namespace:Pennerooney_Cookbook.Models"
+             d:DesignHeight="720"
+             d:DesignWidth="1080"
              x:DataType="vm:HomePageViewModel"
-             mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
-             x:Class="Pennerooney_Cookbook.Views.HomePageView"
              Background="{DynamicResource PrimaryBackgroundGradient}"
-             >
-    
-    <Design.DataContext><vm:HomePageViewModel></vm:HomePageViewModel></Design.DataContext>
-    
+             mc:Ignorable="d">
+
+    <Design.DataContext>
+        <vm:HomePageViewModel />
+    </Design.DataContext>
+
     <ItemsControl ItemsSource="{Binding Recipes}">
-        <!-- Controls the container of ItemsControl -->
+        <!--  Controls the container of ItemsControl  -->
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
-                <WrapPanel  HorizontalAlignment="Center"></WrapPanel>
+                <WrapPanel HorizontalAlignment="Center" />
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
-        <!-- The Data template of ItemsControl -->
+        <!--  The Data template of ItemsControl  -->
         <ItemsControl.ItemTemplate>
             <DataTemplate DataType="m:Recipe">
-               <Card Grid.Column="{Binding Id}" Margin="15"/>
+                <Card Grid.Column="{Binding Id}" Margin="15" />
             </DataTemplate>
         </ItemsControl.ItemTemplate>
     </ItemsControl>
