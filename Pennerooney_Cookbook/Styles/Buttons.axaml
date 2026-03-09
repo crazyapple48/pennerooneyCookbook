@@ -14,7 +14,7 @@
     
     <Style Selector="IconButton.NavBar">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource DarkerTan}" />
+        <Setter Property="Foreground" Value="{DynamicResource gold-light}" />
         <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}" />
         <Setter Property="ClipToBounds" Value="False" />
     </Style>
@@ -31,12 +31,12 @@
     
     <Style Selector="IconButton.NavBar:pointerover /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource LightTan}" />
+        <Setter Property="Foreground" Value="{DynamicResource gold-light}"/>
         <Setter Property="RenderTransform" Value="scale(1.2)" />
     </Style>
     
     <Style Selector="IconButton.NavBar.Active">
-        <Setter Property="IconText" Value="&#xebae;"></Setter>
+        <Setter Property="IconText" Value="&#xebae;" />
     </Style>
     
     <Style Selector="IconButton.NavBar.Active /template/ ContentPresenter">
@@ -46,6 +46,7 @@
     
     <Style Selector="IconButton.NavBar.Active Label">
         <Setter Property="Margin" Value=" 0 0 0 6" />
+        <Setter Property="Foreground" Value="{DynamicResource gold-light}" />
     </Style>
     
 </Styles>

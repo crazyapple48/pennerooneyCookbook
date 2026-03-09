@@ -10,8 +10,9 @@
     
     <Design.DataContext><vm:NewRecipePageViewModel></vm:NewRecipePageViewModel></Design.DataContext>
     
-    <Grid ColumnDefinitions="*, 10, *, 10, *" 
-          RowDefinitions="*, *,  *,  *, 3*"
+    <Grid ColumnDefinitions="*, *, *"
+          ColumnSpacing="10"
+          RowDefinitions="*, *,  *,  2*, 2*"
           Background="{DynamicResource PrimaryCardGradient}"
           Margin="15"
           >
@@ -19,7 +20,7 @@
         <!-- Header -->
         <Label Grid.Column="0"
                Grid.Row="0"
-               Grid.ColumnSpan="5"
+               Grid.ColumnSpan="3"
                Classes="Header" 
                Content="New Recipe" 
                HorizontalAlignment="Center"
@@ -28,7 +29,7 @@
         <!-- Title -->
         <TextBox  Grid.Column="0"
                   Grid.Row="1"
-                  Grid.ColumnSpan="5"
+                  Grid.ColumnSpan="3"
                   Width="200"
                   Watermark="Enter recipe title..."
                   VerticalAlignment="Top"
@@ -52,7 +53,7 @@
             
         <!-- Genre -->
         <ComboBox Grid.Row="2"
-                  Grid.Column="2"
+                  Grid.Column="1"
                   MinWidth="150"
                   HorizontalAlignment="Center"
                   ItemsSource="{Binding Genres}"
@@ -66,7 +67,7 @@
         </ComboBox>
         <!-- Purpose -->
         <ComboBox Grid.Row="2"
-                  Grid.Column="4"
+                  Grid.Column="2"
                   MinWidth="150"
                   HorizontalAlignment="Center"
                   ItemsSource="{Binding Purposes}"
@@ -82,7 +83,7 @@
         <!-- Rating  -->
         <Border Grid.Row="3" 
                 Grid.Column="0"
-                Grid.ColumnSpan="3"
+                Grid.ColumnSpan="2"
                 Background="{DynamicResource PrimaryBackgroundGradient}"
                 Width="150"
                 CornerRadius="12"
@@ -106,8 +107,8 @@
         <!-- Difficulty -->
         
         <Border Grid.Row="3" 
-                Grid.Column="2"
-                Grid.ColumnSpan="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
                 Background="{DynamicResource PrimaryBackgroundGradient}"
                 Width="150"
                 CornerRadius="12"
@@ -127,6 +128,38 @@
                         />
             </StackPanel>
         </Border>
+        
+        <!-- Sources -->
+        <ComboBox Grid.Row="4"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Sources}"
+                  PlaceholderText="Select a Source"
+        >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+        <!-- Ingredients -->
+        <ComboBox Grid.Row="4"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Ingredients}"
+                  PlaceholderText="Select an Ingredient"
+        >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title.Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         
     </Grid>
     

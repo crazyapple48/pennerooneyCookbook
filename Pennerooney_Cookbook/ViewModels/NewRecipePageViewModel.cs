@@ -11,14 +11,28 @@ public partial class NewRecipePageViewModel : PageViewModel
     [ObservableProperty] private ObservableCollection<Genre> _genres;
     [ObservableProperty] private ObservableCollection<Method> _methods;
     [ObservableProperty] private ObservableCollection<Purpose> _purposes;
+    [ObservableProperty] private ObservableCollection<Source> _sources;
+    [ObservableProperty] private ObservableCollection<Ingredient> _ingredients;
 
     public NewRecipePageViewModel() : base(PageNames.NewRecipe)
     {
         GetMethods();
         GetGenres();
         GetPurposes();
+        GetSources();
+        GetIngredients();
     }
-    
+
+    [RelayCommand]
+    private void GetIngredients()
+    {
+        // TODO: Send this logic to a service to pull methods from db
+        Ingredients =
+        [
+            new Ingredient(0, new IngredientName(0, "Onion"), new CutType(0, "diced"), new Unit(0, "cup"), 1),
+        ];
+    }
+
     [RelayCommand]
     private void GetMethods()
     {
@@ -49,6 +63,17 @@ public partial class NewRecipePageViewModel : PageViewModel
         [
             new Purpose(0, "Entree"),
             new Purpose(1, "Dessert")
+        ];
+    }
+
+    [RelayCommand]
+    private void GetSources()
+    {
+        // TODO: Send this logic to a service to pull sources from db
+        Sources =
+        [
+            new Source(0, "Book", true, false),
+            new Source(1, "website", false, true)
         ];
     }
 }

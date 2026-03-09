@@ -8,7 +8,7 @@
              d:DesignHeight="720"
              d:DesignWidth="1080"
              x:DataType="vm:HomePageViewModel"
-             Background="{DynamicResource PrimaryBackgroundGradient}"
+             Background="{DynamicResource PrimaryBackground}"
              mc:Ignorable="d">
 
     <Design.DataContext>

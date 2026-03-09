@@ -6,7 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
              x:Class="Pennerooney_Cookbook.Views.MainView"
              x:DataType="vm:MainViewModel"
-             Background="{DynamicResource PrimaryBackgroundGradient}"
+             Background="{DynamicResource PrimaryBackground}"
              >
   <Design.DataContext>
     <!-- This only sets the DataContext for the previewer in an IDE,
@@ -16,21 +16,23 @@
     
     <Grid>
  
-        <Image  Source="/Assets/Images/Mushrooms-color.png" Stretch="UniformToFill" Opacity=".2"/>
+        <!-- <Image  Source="/Assets/Images/Mushrooms-color.png" Stretch="UniformToFill" Opacity=".2"/> -->
         <Grid RowDefinitions="Auto, *">
             
             <!-- NavBar -->
-            <Border Grid.Column="0"
-                    BoxShadow="{DynamicResource NavBarShadow}"
-                    Margin="0 0 0 15">
-              <Grid Grid.Row="0" 
-                    ColumnDefinitions="*, 1.2*"  
-                    Background="{DynamicResource SecondaryBackgroundGradient}" 
+            <Border Grid.Row="0" Grid.Column="0"
+                    Margin="0 0 0 15"
+                    BorderBrush="{DynamicResource gold-dark}"
+                    BorderThickness="0,0,0,1.5"
+                    >
+              <Grid ColumnDefinitions="*, 1.2*"  
+                    Background="{DynamicResource NavGradient}" 
                     VerticalAlignment="Center" 
                     Height="50"
-                    >
+              >
                       
                   <Label Grid.Column="0" 
+                         Foreground="{DynamicResource gold-light}"
                          VerticalAlignment="Center"
                          Margin="25, 6, 0, 0"
                          FontSize="20"
