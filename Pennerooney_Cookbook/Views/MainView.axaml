@@ -14,16 +14,13 @@
     <vm:MainViewModel />
   </Design.DataContext>
     
-    <Grid>
  
-        <!-- <Image  Source="/Assets/Images/Mushrooms-color.png" Stretch="UniformToFill" Opacity=".2"/> -->
-        <Grid RowDefinitions="Auto, *">
+        <Grid RowDefinitions="Auto, *" RowSpacing="0">
             
             <!-- NavBar -->
             <Border Grid.Row="0" Grid.Column="0"
-                    Margin="0 0 0 15"
                     BorderBrush="{DynamicResource gold-dark}"
-                    BorderThickness="0,0,0,1.5"
+                    BorderThickness="0,0,0,1"
                     >
               <Grid ColumnDefinitions="*, 1.2*"  
                     Background="{DynamicResource NavGradient}" 
@@ -51,8 +48,11 @@
             
             
           <!-- Main Content Area  -->
-          <ContentControl Grid.Row="1"
-                          Content="{ Binding CurrentPage}"/>
+        <Border Grid.Row="1" 
+                BorderBrush="{DynamicResource GoldRule}" 
+                BorderThickness="0, 3, 0, 0" 
+                >
+            <ContentControl Content="{ Binding CurrentPage}"/>
+        </Border>
       </Grid>
-    </Grid>
 </UserControl>

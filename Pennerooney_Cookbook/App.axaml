@@ -59,9 +59,17 @@
             <GradientStop Color="{DynamicResource green-deep}" Offset="1.0" />
         </LinearGradientBrush>
         
+        <LinearGradientBrush x:Key="GoldRule" StartPoint="0%, 0%" EndPoint="100%, 100%">
+            <GradientStop Color="Transparent" Offset="0.0"/>
+            <GradientStop Color="{DynamicResource gold-border}" Offset="0.25"/>
+            <GradientStop Color="{DynamicResource gold-light}" Offset="0.5"/>
+            <GradientStop Color="{DynamicResource gold-border}" Offset="0.75"/>
+            <GradientStop Color="Transparent" Offset="1.0"/>
+        </LinearGradientBrush>
+        
         <LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%, 100%">
-            <GradientStop Color="{DynamicResource LightTan}" Offset="0.0"></GradientStop>
-            <GradientStop Color="{DynamicResource DarkerTan}" Offset="1.0"></GradientStop>
+            <GradientStop Color="{DynamicResource LightTan}" Offset="0.0" />
+            <GradientStop Color="{DynamicResource DarkerTan}" Offset="1.0" />
         </LinearGradientBrush>
         
         <LinearGradientBrush x:Key="SecondaryBackgroundGradient" StartPoint="0%,0%" EndPoint="0%, 100%">
