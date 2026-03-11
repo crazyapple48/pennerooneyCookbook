@@ -6,8 +6,5 @@ namespace Pennerooney_Cookbook.Controls;
 
 public partial class Badge : UserControl
 {
-    public Badge()
-    {
-        InitializeComponent();
-    }
+
 }

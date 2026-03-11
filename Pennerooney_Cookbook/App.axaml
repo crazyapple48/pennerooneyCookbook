@@ -16,6 +16,7 @@
         <StyleInclude Source="/Styles/TextBox.axaml"/>         
         <StyleInclude Source="/Styles/DataValidationErrors.axaml" />
         <StyleInclude Source="/Controls/Card.axaml" />
+        <StyleInclude Source="/Controls/Badge.axaml" />
         
         <Style Selector="TextBlock">
             <Setter Property="FontFamily" Value="{DynamicResource EBGaramond}" />
@@ -53,9 +54,12 @@
         <Color x:Key="gold-dark">#8a6e3a</Color>
         <Color x:Key="gold-border">#c9ae6e</Color>
         <Color x:Key="gold-border-muted">#55c9ae6e</Color>
+        <Color x:Key="gold-mid-dark">#9a7428</Color>
         <Color x:Key="cream">#e8dfc0</Color>
         <Color x:Key="text-main">#ddd0a0</Color>
         <Color x:Key="text-muted">#9e8b5a</Color>
+        <Color x:Key="text-dark">#1a0f00</Color>
+        
         
         <SolidColorBrush x:Key="PrimaryForeground" Color="{DynamicResource gold-light}"/>
         <SolidColorBrush x:Key="PrimaryBackground" Color="{DynamicResource green-deep}" />
@@ -80,9 +84,9 @@
             <GradientStop Color="{DynamicResource DarkerTan}" Offset="1.0" />
         </LinearGradientBrush>
         
-        <LinearGradientBrush x:Key="SecondaryBackgroundGradient" StartPoint="0%,0%" EndPoint="0%, 100%">
-            <GradientStop Color="{DynamicResource LightGreen}" Offset="0.0"></GradientStop>
-            <GradientStop Color="{DynamicResource DarkGreen}" Offset="1.0"></GradientStop>
+        <LinearGradientBrush x:Key="SecondaryBackgroundGradient" StartPoint="0%,0%" EndPoint="100%, 100%">
+            <GradientStop Color="{DynamicResource gold-border}" Offset="0.0"></GradientStop>
+            <GradientStop Color="{DynamicResource gold-mid-dark}" Offset="1.0"></GradientStop>
         </LinearGradientBrush>
         
         <LinearGradientBrush x:Key="PrimaryCardGradient" StartPoint="0%, 0%" EndPoint="50%, 100%">

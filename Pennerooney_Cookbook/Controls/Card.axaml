@@ -15,7 +15,8 @@
                         BorderBrush="{DynamicResource gold-border-muted}"
                         Cursor="Hand"
                         BorderThickness="1"
-                        MaxWidth="230"
+                        Width="280"
+                        MinHeight="215"
                         CornerRadius="20"
                         Padding="20 15"
                 >
@@ -29,36 +30,28 @@
                                FontWeight="Light"
                                />
                         
+                        <Badge Grid.Row="0" Grid.Column="1"></Badge>
                         
+                        <Label Grid.Row="1" Grid.Column="0" 
+                               Content="{Binding Genre.Title}" 
+                               HorizontalAlignment="Left" 
+                               FontStyle="Italic"
+                               FontWeight="Regular"
+                               FontStretch="Expanded"
+                               Foreground="{DynamicResource text-muted}"
+                               />
                         
-                        <Grid Grid.Row="1" 
-                              ColumnDefinitions="*, *, *">
-                            <Label Grid.Column="0" 
-                                   Content="{Binding Method.Title}" 
-                                   HorizontalAlignment="Center" />
-                            <Label Grid.Column="1" 
-                                   Content="{Binding Genre.Title}" 
-                                   HorizontalAlignment="Center" />
-                            <Label Grid.Column="2" 
-                                   Content="{Binding Purpose.Title}" 
-                                   HorizontalAlignment="Center"/>
-                        </Grid>
-                        
-                        <Grid Grid.Row="2" ColumnDefinitions="*, *">
-                            <StackPanel Grid.Column="0" VerticalAlignment="Bottom">
-                                <Label HorizontalAlignment="Center" Content="Rating" Margin="0"/> 
-                                <Label HorizontalAlignment="Center" Content="{Binding Rating}" Margin="0"/>
+                        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" ColumnDefinitions="*, *">
+                            <StackPanel Grid.Column="0">
+                                <Label HorizontalAlignment="Left" Content="RATING" Margin="0" Foreground="{DynamicResource text-muted}"/> 
+                                <Label HorizontalAlignment="Left" Content="{Binding Rating}" Margin="0"/>
                             </StackPanel>
-                            <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
-                                <Label HorizontalAlignment="Center" Content="Difficulty" Margin="0"/> 
-                                <Label HorizontalAlignment="Center" Content="{Binding Difficulty}" Margin="0"/>
+                            <StackPanel Grid.Column="1">
+                                <Label HorizontalAlignment="Left" Content="DIFFICULTY" Margin="0" Foreground="{DynamicResource text-muted}"/> 
+                                <Label HorizontalAlignment="Left" Content="{Binding Difficulty}" Margin="0"/>
                             </StackPanel> 
                         </Grid>
                         
-                        <Grid Grid.Row="3" ColumnDefinitions="*, Auto">
-                            <Label Grid.Column="0" Content="{Binding LastCooked}" VerticalAlignment="Bottom"/>
-                            <Label Grid.Column="1" Content="{Binding IsFavorite}" VerticalAlignment="Bottom"/>
-                        </Grid>
                         
                     </Grid>
                 </Border>
