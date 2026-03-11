@@ -14,8 +14,8 @@
     <!-- Add Styles Here -->
     
     <Style Selector="Label">
-        <Setter Property="Foreground" Value="{DynamicResource DarkerTan}" />
-        <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
+        <Setter Property="FontFamily" Value="{DynamicResource EBGaramond}" />
         <Setter Property="Margin" Value="0 6 0 0" />
     </Style>
     

@@ -15,7 +15,7 @@
     <Style Selector="IconButton.NavBar">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource gold-light}" />
-        <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}" />
+        <Setter Property="FontFamily" Value="{DynamicResource EBGaramond}" />
         <Setter Property="ClipToBounds" Value="False" />
     </Style>
     
