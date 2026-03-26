@@ -1,2 +1,3 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=1c1a049e_002D235c_002D4cd0_002Db6fa_002Dd53ac418f4da_0023Pennerooney_005FCookbook_002EBrowser/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=ebd9022f_002Dbc83_002D4846_002D9a11_002D6f7f3772dc64_0023Pennerooney_005FCookbook_002EiOS/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
