@@ -2,7 +2,165 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Pennerooney_Cookbook.Views.NewRecipePageView">
-    New Recipe!!!
+             xmlns:vm="clr-namespace:Pennerooney_Cookbook.ViewModels"
+             x:DataType="vm:NewRecipePageViewModel"
+             mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
+             x:Class="Pennerooney_Cookbook.Views.NewRecipePageView"
+             Background="{DynamicResource PrimaryBackgroundGradient}">
+    
+    <Design.DataContext><vm:NewRecipePageViewModel></vm:NewRecipePageViewModel></Design.DataContext>
+    
+    <Grid ColumnDefinitions="*, *, *"
+          ColumnSpacing="10"
+          RowDefinitions="*, *,  *,  2*, 2*"
+          Background="{DynamicResource PrimaryCardGradient}"
+          Margin="15"
+          >
+        
+        <!-- Header -->
+        <Label Grid.Column="0"
+               Grid.Row="0"
+               Grid.ColumnSpan="3"
+               Classes="Header" 
+               Content="New Recipe" 
+               HorizontalAlignment="Center"
+        />
+        
+        <!-- Title -->
+        <TextBox  Grid.Column="0"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="3"
+                  Width="200"
+                  Watermark="Enter recipe title..."
+                  VerticalAlignment="Top"
+        >
+        </TextBox>
+        
+        <!-- Method -->
+        <ComboBox Grid.Row="2"
+                  Grid.Column="0"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Methods}"
+                  PlaceholderText="Select a Method"
+                  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+            
+        <!-- Genre -->
+        <ComboBox Grid.Row="2"
+                  Grid.Column="1"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Genres}"
+                  PlaceholderText="Select a Genre"
+        >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <!-- Purpose -->
+        <ComboBox Grid.Row="2"
+                  Grid.Column="2"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Purposes}"
+                  PlaceholderText="Select a Purpose"
+        >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+        <!-- Rating  -->
+        <Border Grid.Row="3" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Background="{DynamicResource PrimaryBackgroundGradient}"
+                Width="150"
+                CornerRadius="12"
+                VerticalAlignment="Center"
+                >
+            <StackPanel HorizontalAlignment="Center">
+                <Label Content="Rating:" 
+                       Foreground="{DynamicResource DarkGreen}"
+                       HorizontalContentAlignment="Center"/>
+                
+                <Slider IsSnapToTickEnabled="True"
+                        Ticks="1, 2, 3, 4, 5"
+                        Minimum="1"
+                        Maximum="5"
+                        Width="100"
+                        TickPlacement="TopLeft"
+                        />
+            </StackPanel>
+        </Border>
+        
+        <!-- Difficulty -->
+        
+        <Border Grid.Row="3" 
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Background="{DynamicResource PrimaryBackgroundGradient}"
+                Width="150"
+                CornerRadius="12"
+                VerticalAlignment="Center"
+        >
+            <StackPanel HorizontalAlignment="Center">
+                <Label Content="Difficulty:" 
+                       Foreground="{DynamicResource DarkGreen}"
+                       HorizontalContentAlignment="Center"/>
+                
+                <Slider IsSnapToTickEnabled="True"
+                        Ticks="1, 2, 3, 4, 5"
+                        Minimum="1"
+                        Maximum="5"
+                        Width="100"
+                        TickPlacement="TopLeft"
+                        />
+            </StackPanel>
+        </Border>
+        
+        <!-- Sources -->
+        <ComboBox Grid.Row="4"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Sources}"
+                  PlaceholderText="Select a Source"
+        >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+        <!-- Ingredients -->
+        <ComboBox Grid.Row="4"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2"
+                  MinWidth="150"
+                  HorizontalAlignment="Center"
+                  ItemsSource="{Binding Ingredients}"
+                  PlaceholderText="Select an Ingredient"
+        >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title.Title}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+    </Grid>
+    
 </UserControl>

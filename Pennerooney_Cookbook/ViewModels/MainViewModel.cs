@@ -9,8 +9,8 @@ namespace Pennerooney_Cookbook.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
     private readonly PageFactory _pageFactory;
-    
-    
+
+
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HomePageIsActive))]
     [NotifyPropertyChangedFor(nameof(NewRecipePageIsActive))]
@@ -22,8 +22,9 @@ public partial class MainViewModel : ViewModelBase
     public MainViewModel()
     {
         CurrentPage = new HomePageViewModel();
+        _pageFactory = new PageFactory((_) => new HomePageViewModel());
     }
-    
+
     public MainViewModel(PageFactory pageFactory)
     {
         _pageFactory = pageFactory ?? throw new ArgumentNullException(nameof(pageFactory));
@@ -32,7 +33,7 @@ public partial class MainViewModel : ViewModelBase
 
     [RelayCommand]
     private void GoToHome() => CurrentPage = _pageFactory.GetPageViewModel<HomePageViewModel>();
-    
+
     [RelayCommand]
     private void GoToNewRecipe() => CurrentPage = _pageFactory.GetPageViewModel<NewRecipePageViewModel>();
 }

@@ -23,4 +23,11 @@
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Controls\Card.axaml.cs">
+        <DependentUpon>Card.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

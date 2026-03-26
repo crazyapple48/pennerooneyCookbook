@@ -23,7 +23,7 @@ public partial class HomePageViewModel : PageViewModel
     {
         Recipes =
         [
-            new Recipe(1, "Recipe1", 
+            new Recipe(1, "Recipe1 has a super duper long title, holy shit", 
                 new Method(1, "InstaPot"), 
                 new Genre(1, "Mexican"), 
                 new Purpose(1, "Entree"), 

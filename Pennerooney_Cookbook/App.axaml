@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:Pennerooney_Cookbook"
              x:Class="Pennerooney_Cookbook.App"
-             RequestedThemeVariant="Default">
+             RequestedThemeVariant="Dark">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
@@ -13,7 +13,17 @@
         <FluentTheme />
         <StyleInclude Source="/Styles/Label.axaml" />
         <StyleInclude Source="/Styles/Buttons.axaml" />
-        <StyleInclude Source="/Controls/Card.axaml"></StyleInclude>
+        <StyleInclude Source="/Styles/TextBox.axaml"/>         
+        <StyleInclude Source="/Styles/DataValidationErrors.axaml" />
+        <StyleInclude Source="/Controls/Card.axaml" />
+        <StyleInclude Source="/Controls/Badge.axaml" />
+        
+        <Style Selector="TextBlock">
+            <Setter Property="FontFamily" Value="{DynamicResource EBGaramond}" />
+        </Style>
+        <Style Selector="TemplatedControl">
+            <Setter Property="FontFamily" Value="{DynamicResource EBGaramond}" />
+        </Style>
     </Application.Styles>
              
 
@@ -22,38 +32,67 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <MergeResourceInclude Source="/Controls/IconButton.axaml" />
+                <MergeResourceInclude Source="/Controls/ComboBox.axaml" />
+                <MergeResourceInclude Source="/Controls/ComboBoxItem.axaml" />
+                <MergeResourceInclude Source="/Controls/Slider.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         
         
         
-        <FontFamily x:Key="PrimaryFontFamily">/Assets/Fonts/Kugile_Demo.ttf#Kugile, Regular</FontFamily>
-        <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor, Regular</FontFamily>
-        <FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill, Regular</FontFamily>
+        <FontFamily x:Key="EBGaramond">avares://Pennerooney_Cookbook/Assets/Fonts/EBGaramond-VariableFont_wght.ttf#EB Garamond</FontFamily>
+        <FontFamily x:Key="Phosphor">avares://Pennerooney_Cookbook/Assets/Fonts/Phosphor.ttf#Phosphor, Regular</FontFamily>
+        <FontFamily x:Key="PhosphorFill">avares://Pennerooney_Cookbook/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill, Regular</FontFamily>
         
         
-        <Color x:Key="LightTan">#FFF0BC</Color>
-        <Color x:Key="DarkerTan">#AAA078</Color>
-        <Color x:Key="LightGreen">#105332</Color>
-        <Color x:Key="DarkGreen">#032209</Color>
-        <Color x:Key="DarkOrange">#643303</Color>
+        <Color x:Key="dark-green">#061810</Color>
+        <Color x:Key="green-deep">#0a2b1a</Color>
+        <Color x:Key="green-mid">#0d3520</Color>
+        <Color x:Key="green-panel">#0f3d25</Color>
+        <Color x:Key="gold-light">#d4bf82</Color>
+        <Color x:Key="gold-mid">#b8a060</Color>
+        <Color x:Key="gold-dark">#8a6e3a</Color>
+        <Color x:Key="gold-border">#c9ae6e</Color>
+        <Color x:Key="gold-border-muted">#55c9ae6e</Color>
+        <Color x:Key="gold-mid-dark">#9a7428</Color>
+        <Color x:Key="cream">#e8dfc0</Color>
+        <Color x:Key="text-main">#ddd0a0</Color>
+        <Color x:Key="text-muted">#9e8b5a</Color>
+        <Color x:Key="text-dark">#1a0f00</Color>
+        
+        
+        <SolidColorBrush x:Key="PrimaryForeground" Color="{DynamicResource gold-light}"/>
+        <SolidColorBrush x:Key="PrimaryBackground" Color="{DynamicResource green-deep}" />
         
         <BoxShadows x:Key="NavBarShadow">0 2 10 2 #643303</BoxShadows>
         
+        <LinearGradientBrush x:Key="NavGradient" StartPoint="0%, 0%" EndPoint="0%, 100%">
+            <GradientStop Color="{DynamicResource dark-green}" Offset="0.0" />
+            <GradientStop Color="{DynamicResource green-deep}" Offset="1.0" />
+        </LinearGradientBrush>
+        
+        <LinearGradientBrush x:Key="GoldRule" StartPoint="0%, 0%" EndPoint="100%, 100%">
+            <GradientStop Color="Transparent" Offset="0.0"/>
+            <GradientStop Color="{DynamicResource gold-border}" Offset="0.25"/>
+            <GradientStop Color="{DynamicResource gold-light}" Offset="0.5"/>
+            <GradientStop Color="{DynamicResource gold-border}" Offset="0.75"/>
+            <GradientStop Color="Transparent" Offset="1.0"/>
+        </LinearGradientBrush>
+        
         <LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%, 100%">
-            <GradientStop Color="{DynamicResource LightTan}" Offset="0.0"></GradientStop>
-            <GradientStop Color="{DynamicResource DarkerTan}" Offset="1.0"></GradientStop>
+            <GradientStop Color="{DynamicResource LightTan}" Offset="0.0" />
+            <GradientStop Color="{DynamicResource DarkerTan}" Offset="1.0" />
         </LinearGradientBrush>
         
-        <LinearGradientBrush x:Key="SecondaryBackgroundGradient" StartPoint="0%,0%" EndPoint="0%, 100%">
-            <GradientStop Color="{DynamicResource LightGreen}" Offset="0.0"></GradientStop>
-            <GradientStop Color="{DynamicResource DarkGreen}" Offset="1.0"></GradientStop>
+        <LinearGradientBrush x:Key="SecondaryBackgroundGradient" StartPoint="0%,0%" EndPoint="100%, 100%">
+            <GradientStop Color="{DynamicResource gold-border}" Offset="0.0"></GradientStop>
+            <GradientStop Color="{DynamicResource gold-mid-dark}" Offset="1.0"></GradientStop>
         </LinearGradientBrush>
         
-        <ConicGradientBrush x:Key="PrimaryCardGradient" Angle="180">
-            <GradientStop Color="{DynamicResource LightGreen}" Offset="0.0"></GradientStop>
-            <GradientStop Color="{DynamicResource DarkGreen}" Offset="1.0"></GradientStop>
-        </ConicGradientBrush>
+        <LinearGradientBrush x:Key="PrimaryCardGradient" StartPoint="0%, 0%" EndPoint="50%, 100%">
+            <GradientStop Color="{DynamicResource green-panel}" Offset="0.0"/>
+            <GradientStop Color="{DynamicResource green-deep}" Offset="0.75"/>
+        </LinearGradientBrush>
         
         
         
